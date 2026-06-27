@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTW & TOW Calculator Denis</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+
+background:#f2f2f2;
+
+padding:20px;
+
+}
+
+.container{
+
+max-width:500px;
+
+margin:auto;
+
+}
+
+.logo{
+
+width:140px;
+
+display:block;
+
+margin:auto;
+
+margin-bottom:20px;
+
+}
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+margin-bottom:20px;
+
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#d60000;
+
+}
+
+label{
+
+display:block;
+
+margin-top:15px;
+
+margin-bottom:5px;
+
+font-weight:bold;
+
+}
+
+input{
+
+width:100%;
+
+padding:15px;
+
+font-size:22px;
+
+border-radius:12px;
+
+border:1px solid #ccc;
+
+}
+
+.result{
+
+margin-top:20px;
+
+font-size:28px;
+
+font-weight:bold;
+
+text-align:center;
+
+color:#d60000;
+
+}
+
+button{
+
+width:100%;
+
+margin-top:20px;
+
+padding:18px;
+
+font-size:22px;
+
+background:#d60000;
+
+color:white;
+
+border:none;
+
+border-radius:15px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+
+TTW & TOW Calculator Denis
+
+</h1>
+
+<div class="card">
+
+<label>
+
+Čas za eno paleto (sek)
+
+</label>
+
+<input
+id="cas"
+type="number"
+placeholder="30.25">
+
+<button onclick="izracunajCas()">
+
+Izračunaj TTW
+
+</button>
+
+<div
+class="result"
+id="rezultatCas">
+
+0
+
+</div>
+
+</div>
+
+<div class="card">
+
+<label>
+
+TTW vozički
+
+</label>
+
+<input
+id="ttw"
+type="number"
+placeholder="140">
+
+<label>
+
+Palet na TTW
+
+</label>
+
+<input
+id="palete"
+type="number"
+value="9">
+
+<label>
+
+Cigel na paleti
+
+</label>
+
+<input
+id="cigel"
+type="number"
+value="12">
+
+<label>
+
+Cigel na enem TOW
+
+</label>
+
+<input
+id="tow"
+type="number"
+value="360">
+
+<button onclick="izracunajTow()">
+
+Izračunaj TOW
+
+</button>
+
+<div
+class="result"
+id="rezultatTow">
+
+0
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function izracunajCas(){
+
+let cas=parseFloat(document.getElementById("cas").value);
+
+if(isNaN(cas))return;
+
+let skupaj=cas*9;
+
+document.getElementById("rezultatCas").innerHTML=
+
+skupaj.toFixed(2)+" sek";
+
+}
+
+function izracunajTow(){
+
+let ttw=parseFloat(document.getElementById("ttw").value);
+
+let palete=parseFloat(document.getElementById("palete").value);
+
+let cigel=parseFloat(document.getElementById("cigel").value);
+
+let tow=parseFloat(document.getElementById("tow").value);
+
+let skupajPalet=ttw*palete;
+
+let skupajCigel=skupajPalet*cigel;
+
+let rezultat=skupajCigel/tow;
+
+document.getElementById("rezultatTow").innerHTML=
+
+"TOW: "+rezultat.toFixed(0);
+
+}
+
+</script>
+
+</body>
+
+</html>
