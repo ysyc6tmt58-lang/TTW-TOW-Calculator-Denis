@@ -1,8 +1,6 @@
 function formatTime(seconds) {
-
     const min = Math.floor(seconds / 60);
     const sec = (seconds % 60).toFixed(2);
-
     return min + " min " + sec + " s";
 }
 
@@ -37,52 +35,33 @@ function izracunajCas() {
 
 function izracunajTow() {
 
-    const paletNaTTW =
-        parseFloat(document.getElementById("palet").value) || 9;
+    const poljeTTW = document.getElementById("ttw");
+    const poljePalet = document.getElementById("skupajPalet");
 
-    const cigelNaPaleti =
-        parseFloat(document.getElementById("cigel").value) || 12;
-
-    const cigelNaTow =
-        parseFloat(document.getElementById("tow").value) || 360;
-
-    const poljeTTW =
-        document.getElementById("ttw");
-
-    const poljePalet =
-        document.getElementById("skupajPalet");
+    const paletNaTTW = parseFloat(document.getElementById("palet").value) || 9;
+    const cigelNaPaleti = parseFloat(document.getElementById("cigel").value) || 12;
+    const cigelNaTow = parseFloat(document.getElementById("tow").value) || 360;
 
     let ttw;
     let skupajPalet;
 
     if (document.activeElement === poljePalet) {
 
-        skupajPalet =
-            parseFloat(poljePalet.value) || 0;
-
+        skupajPalet = parseFloat(poljePalet.value) || 0;
         ttw = skupajPalet / paletNaTTW;
-
         poljeTTW.value = ttw.toFixed(2);
 
     } else {
 
-        ttw =
-            parseFloat(poljeTTW.value) || 0;
-
+        ttw = parseFloat(poljeTTW.value) || 0;
         skupajPalet = ttw * paletNaTTW;
-
         poljePalet.value = skupajPalet.toFixed(2);
 
     }
 
-    const skupajCigel =
-        skupajPalet * cigelNaPaleti;
-
-    const natancno =
-        skupajCigel / cigelNaTow;
-
-    const potrebno =
-        Math.ceil(natancno);
+    const skupajCigel = skupajPalet * cigelNaPaleti;
+    const natancno = skupajCigel / cigelNaTow;
+    const potrebno = Math.ceil(natancno);
     document.getElementById("rezultat").innerHTML = `
     <div class="resultCard">
 
@@ -91,7 +70,7 @@ function izracunajTow() {
         <div class="big">${skupajPalet.toFixed(2)}</div>
 
         <p>🧱 Skupaj cigel:
-        <b>${skupajCigel.toFixed(2)}</b></p>
+        <b>${skupajCigel.toFixed(0)}</b></p>
 
         <hr style="margin:15px 0;">
 
