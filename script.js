@@ -60,7 +60,8 @@ const skupajPalet=ttw*palet;
 
 const skupajCigel=skupajPalet*cigel;
 
-const rezultat=Math.ceil(skupajCigel/tow);
+const rezultat = skupajCigel / tow;
+const rezultatZaokrozen = Math.ceil(rezultat);
     document.getElementById("rezultat").innerHTML=`
 
 <div class="resultCard">
@@ -72,8 +73,11 @@ const rezultat=Math.ceil(skupajCigel/tow);
 <p>🧱 Skupaj cigel:
 <b>${skupajCigel}</b></p>
 
-<p>🚛 Potrebni TOW:
-<b class="success">${rezultat}</b></p>
+<p>🚛 Natančno TOW:
+<b>${rezultat.toFixed(2)}</b></p>
+
+<p>✅ Potrebno pripraviti:
+<b class="success">${rezultatZaokrozen}</b></p>
 
 </div>
 
