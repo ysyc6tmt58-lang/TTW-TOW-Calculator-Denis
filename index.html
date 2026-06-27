@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="sl">
+
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>TTW & TOW Calculator Denis</title>
 
@@ -22,7 +23,7 @@
 
 <header>
 
-<img src="logo.png" class="logo">
+<img src="IMG_0669.jpeg" class="logo">
 
 <h1>TTW & TOW Calculator</h1>
 
@@ -30,64 +31,60 @@
 
 </header>
 
-<nav>
+<section class="card">
 
-<button class="active">⏱ ČAS</button>
+<h2>⏱ Čas</h2>
 
-<button>🚛 TOW</button>
-
-<button>⚙ Nastavitve</button>
-
-</nav>
-
-<main>
-
-<div class="card">
-
-<h2>Čas za eno paleto</h2>
+<label>Čas za 1 paleto (sek)</label>
 
 <input
 id="cas"
 type="number"
 placeholder="30.25">
 
-</div>
+<div id="casRezultat"></div>
 
-<div class="card">
+</section>
 
-<h2>TOW Kalkulator</h2>
+<section class="card">
+
+<h2>🚛 TOW Kalkulator</h2>
+
+<label>TTW vozički</label>
 
 <input
 id="ttw"
 type="number"
-placeholder="TTW">
+placeholder="140">
+
+<label>Palet na TTW</label>
 
 <input
-id="palete"
+id="palet"
 type="number"
 value="9">
+
+<label>Cigel na paleti</label>
 
 <input
 id="cigel"
 type="number"
 value="12">
 
+<label>Cigel na enem TOW</label>
+
 <input
 id="tow"
 type="number"
 value="360">
 
-</div>
+<div id="rezultat"></div>
 
-<div id="results">
-
-</div>
-
-</main>
-
-</div>
+</section>
 
 <script src="script.js"></script>
+
+</div>
 
 </body>
 
