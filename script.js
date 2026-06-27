@@ -94,3 +94,6 @@ document.getElementById("tow").addEventListener("input", izracunajTow);
 
 izracunajCas();
 izracunajTow();
+document
+.getElementById("skupajPalet")
+.addEventListener("input",izracunajTow);
