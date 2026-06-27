@@ -38,7 +38,24 @@ function izracunajTow() {
     const cigel = parseFloat(document.getElementById("cigel").value) || 12;
     const tow = parseFloat(document.getElementById("tow").value) || 360;
 
-    const skupajPalet = ttw * palet;
+let skupajPalet;
+
+const poljePalet = document.getElementById("skupajPalet");
+
+if(document.activeElement === poljePalet){
+
+    skupajPalet = parseFloat(poljePalet.value) || 0;
+
+    document.getElementById("ttw").value =
+    (skupajPalet / palet).toFixed(2);
+
+}else{
+
+    skupajPalet = ttw * palet;
+
+    poljePalet.value = skupajPalet.toFixed(2);
+
+}
     const skupajCigel = skupajPalet * cigel;
 
     const natancno = skupajCigel / tow;
