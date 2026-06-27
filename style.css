@@ -2,86 +2,278 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 
 body{
-    background:#f2f2f7;
+
+    background:#ececec;
+
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
     color:#222;
+
 }
 
 .container{
-    max-width:500px;
+
+    width:100%;
+
+    max-width:520px;
+
     margin:auto;
-    padding:20px;
+
+    padding:18px;
+
 }
 
 header{
+
     text-align:center;
+
     margin-bottom:25px;
+
 }
 
 .logo{
+
     width:130px;
+
+    height:auto;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
     margin-bottom:15px;
+
 }
 
 h1{
-    color:#d60000;
+
+    color:#c40000;
+
     font-size:32px;
+
+    font-weight:800;
+
 }
 
 header p{
+
     color:#666;
+
     font-size:18px;
-}
 
-nav{
-    display:flex;
-    gap:10px;
-    margin-bottom:20px;
-}
+    margin-top:5px;
 
-nav button{
-    flex:1;
-    border:none;
-    border-radius:15px;
-    padding:14px;
-    font-size:16px;
-    background:white;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-nav .active{
-    background:#d60000;
-    color:white;
 }
 
 .card{
+
     background:white;
-    border-radius:20px;
-    padding:20px;
+
+    border-radius:24px;
+
+    padding:22px;
+
     margin-bottom:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.10);
+
 }
 
 .card h2{
-    margin-bottom:15px;
+
+    color:#c40000;
+
+    margin-bottom:18px;
+
+    font-size:24px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-top:14px;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
 }
 
 input{
+
     width:100%;
-    padding:16px;
-    margin-top:10px;
-    margin-bottom:10px;
-    border-radius:14px;
-    border:1px solid #ddd;
-    font-size:20px;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    border:2px solid #ddd;
+
+    font-size:24px;
+
+    transition:.25s;
+
+    outline:none;
+
 }
 
-#results{
-    background:white;
-    border-radius:20px;
-    padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+input:focus{
+
+    border-color:#d60000;
+
+    box-shadow:
+
+    0 0 0 4px rgba(214,0,0,.15);
+
+}
+
+#casRezultat{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    line-height:1.8;
+
+}
+
+#rezultat{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    font-weight:bold;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-top:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#d60000;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:scale(1.02);
+
+    background:#b30000;
+
+}
+
+.resultCard{
+
+    background:#f8f8f8;
+
+    border-left:6px solid #d60000;
+
+    border-radius:18px;
+
+    padding:16px;
+
+    margin-top:15px;
+
+}
+
+.resultCard p{
+
+    margin:10px 0;
+
+    font-size:22px;
+
+}
+
+.big{
+
+    font-size:38px;
+
+    font-weight:800;
+
+    color:#d60000;
+
+}
+
+.success{
+
+    color:#1f8f35;
+
+}
+
+.warning{
+
+    color:#ff9800;
+
+}
+
+@media (max-width:600px){
+
+.container{
+
+padding:12px;
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+.card{
+
+padding:18px;
+
+}
+
+input{
+
+font-size:22px;
+
+padding:16px;
+
+}
+
+.resultCard p{
+
+font-size:20px;
+
+}
+
+.big{
+
+font-size:34px;
+
+}
+
 }
