@@ -1,79 +1,23 @@
-const cas = document.getElementById("cas");
-const ttw = document.getElementById("ttw");
-const palete = document.getElementById("palete");
-const cigel = document.getElementById("cigel");
-const tow = document.getElementById("tow");
-const results = document.getElementById("results");
+function izracunajTOW() {
+    const ttw = parseFloat(document.getElementById("ttw").value) || 0;
+    const paletNaTTW = parseFloat(document.getElementById("palet").value) || 9;
+    const cigelNaPaleti = parseFloat(document.getElementById("cigel").value) || 12;
+    const cigelNaTOW = parseFloat(document.getElementById("tow").value) || 360;
 
-function izracunaj() {
+    const skupajPalet = ttw * paletNaTTW;
+    const skupajCigel = skupajPalet * cigelNaPaleti;
+    const skupajTOW = Math.ceil(skupajCigel / cigelNaTOW);
 
-let html = "";
-
-// ČAS
-
-if(cas.value !== ""){
-
-let sek = parseFloat(cas.value);
-
-let ttwCas = sek * 9;
-
-let paletNaUro = 3600 / sek;
-
-let ttwNaUro = paletNaUro / 9;
-
-html += `
-<div class="card">
-<h2>ČAS</h2>
-
-<p><b>TTW:</b> ${ttwCas.toFixed(2)} s</p>
-
-<p><b>Palet / ura:</b> ${paletNaUro.toFixed(2)}</p>
-
-<p><b>TTW / ura:</b> ${ttwNaUro.toFixed(2)}</p>
-
-</div>
-`;
-
+    document.getElementById("rezultat").innerHTML = `
+        <h2>Rezultat</h2>
+        <p>📦 Skupaj palet: <b>${skupajPalet}</b></p>
+        <p>🧱 Skupaj cigel: <b>${skupajCigel}</b></p>
+        <p>🚛 Potrebnih TOW: <b>${skupajTOW}</b></p>
+    `;
 }
 
-// TOW
+document.querySelectorAll("input").forEach(el=>{
+    el.addEventListener("input",izracunajTOW);
+});
 
-if(ttw.value !== ""){
-
-let skupajPalet =
-parseFloat(ttw.value) *
-parseFloat(palete.value);
-
-let skupajCigel =
-skupajPalet *
-parseFloat(cigel.value);
-
-let rezultat =
-skupajCigel /
-parseFloat(tow.value);
-
-html += `
-<div class="card">
-
-<h2>TOW</h2>
-
-<p><b>Palet:</b> ${skupajPalet}</p>
-
-<p><b>Cigel:</b> ${skupajCigel}</p>
-
-<p><b>TOW:</b> ${rezultat.toFixed(0)}</p>
-
-</div>
-`;
-
-}
-
-results.innerHTML = html;
-
-}
-
-cas.addEventListener("input",izracunaj);
-ttw.addEventListener("input",izracunaj);
-palete.addEventListener("input",izracunaj);
-cigel.addEventListener("input",izracunaj);
-tow.addEventListener("input",izracunaj);
+izracunajTOW();
